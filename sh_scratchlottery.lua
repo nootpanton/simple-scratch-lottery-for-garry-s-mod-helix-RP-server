@@ -1,6 +1,6 @@
 
-ITEM.name = "즉석 복권"
-ITEM.description = "복권을 긁고 당신의 행운을 시험해보세요."
+ITEM.name = "Scratch lottery"
+ITEM.description = "Scratch it, test your luck.."
 ITEM.model = "models/lottery_ticket/lottery_ticket.mdl"
 ITEM.width = 1
 ITEM.height = 1
@@ -8,15 +8,15 @@ ITEM.price = 20
 ITEM.flag = "v"
 
 local rewards = {
-    { chance = 740, item = nil, message = "아쉽게도... 꽝입니다.", sound = "buttons/lever7.wav"  },
-    { chance = 230, item = "lotterywin50",  message = "50 토큰에 당첨되었습니다.", sound = "buttons/lever7.wav" },
-    { chance = 25, item = "lotterywin100", message = "100 토큰에 당첨되었습니다!", sound = "buttons/lever7.wav" },
-    { chance = 5,  item = "lotterywin500", message = "세상에, 500 토큰에 당첨되셨습니다!", sound = "ambient/alarms/warningbell1.wav" },
+    { chance = 740, item = nil, message = "Unfortunately... you lose.", sound = "buttons/lever7.wav"  },
+    { chance = 230, item = "lotterywin50",  message = "You win 50 tokens.", sound = "buttons/lever7.wav" },
+    { chance = 25, item = "lotterywin100", message = "You win 100 tokens!", sound = "buttons/lever7.wav" },
+    { chance = 5,  item = "lotterywin500", message = "Oh god, You win 500 tokens!", sound = "ambient/alarms/warningbell1.wav" },
 }
 
 ITEM.functions = ITEM.functions or {}
 ITEM.functions.Use = {
-    name = "복권 긁기",
+    name = "Scratch",
     OnCanRun = function(item, client)
         return true
     end,

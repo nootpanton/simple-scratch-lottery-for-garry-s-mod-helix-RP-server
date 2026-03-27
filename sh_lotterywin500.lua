@@ -1,6 +1,6 @@
 
-ITEM.name = "500 토큰 당첨 복권"
-ITEM.description = "500 토큰에 당첨된 행운의 증표입니다."
+ITEM.name = "500 token win ticket"
+ITEM.description = "The 500 tokens win ticket of good luck."
 ITEM.model = "models/lottery_ticket_win/lottery_ticket_win.mdl"
 ITEM.width = 1
 ITEM.height = 1
