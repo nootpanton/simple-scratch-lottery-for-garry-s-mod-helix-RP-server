@@ -9,7 +9,7 @@ ITEM.flag = "v"
 
 ITEM.data = {
     uses = MAX_USES
-}
+} --item use number
 
 function ITEM:GetDescription()
     local uses = self:GetData("uses", MAX_USES)
@@ -22,8 +22,8 @@ local rewards = {
     { chance = 245,  item = "lotterywin100",  message = "You win 100 tokens!", sound = "buttons/lever7.wav" },
     { chance = 120,   item = "lotterywin500",  message = "Oh god, You win 500 tokens!", sound = "ambient/alarms/warningbell1.wav" },
 	{ chance = 25,	 item = "lotterywin1000", message = "Lady Luck is smiling on you today! You've won a whopping 1,000 tokens!", sound = "ambient/alarms/warningbell1.wav" },
-}
-	
+} -- you can change odd and sound, recomended test it after change odd 
+
 ITEM.functions = ITEM.functions or {}
 
 ITEM.functions.Use = {
@@ -33,15 +33,14 @@ ITEM.functions.Use = {
         return item:GetData("uses", MAX_USES) > 0
     end,
 
-    OnRun = function(item, client)
-        local player = item:GetOwner()
+    OnRun = function(item, data)
+        local player = item:player() --player can use on field and inventory
         if not IsValid(player) then return false end
 
         local char = player:GetCharacter()
         if not char then return false end
 
-        local uses = item:GetData("uses", MAX_USES)
-
+        local uses = item:GetData("uses", MAX_USES) 
         local roll = math.random(10000)
         local total = 0
         local prize = rewards[1]
@@ -70,7 +69,7 @@ ITEM.functions.Use = {
 
         if uses <= 0 then
             return true
-        end
+        end	-- check how many use item and if 0 use left, delete it
 
         return false
     end,
