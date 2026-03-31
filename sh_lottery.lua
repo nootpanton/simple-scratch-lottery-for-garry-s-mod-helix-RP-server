@@ -20,8 +20,8 @@ ITEM.functions.Use = {
     OnCanRun = function(item, client)
         return true
     end,
-    OnRun = function(item, client)
-        local player = item:GetOwner()
+    OnRun = function(item, data)
+        local player = item.player
         if not IsValid(player) then return false end
 
         local char = player:GetCharacter()
