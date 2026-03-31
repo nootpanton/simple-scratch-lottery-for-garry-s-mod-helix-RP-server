@@ -13,7 +13,7 @@ ITEM.data = {
 
 function ITEM:GetDescription()
     local uses = self:GetData("uses", MAX_USES)
-    return "복권 " .. uses .. "장이 들어있는 작은 상자입니다. 소문에 의하면 1000토큰 짜리 당첨금이 있다고 합니다."
+    return " there is box including " .. uses .. " lottery ticket. rumer has there is you can whopping 1000 token win chance."
 end
 
 local rewards = {
